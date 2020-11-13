@@ -1,16 +1,17 @@
 let nodemailer = require('nodemailer');
+let {emailPassword} = require('./keys');
 
 let transporter = nodemailer.createTransport({
     service: "smtp.gmail.com",
     auth: {
         user: "utaustin@longhorngaming.gg",
-        pass: "GonghornLaming2k20"
+        pass: emailPassword
     }
 });
 
 let mailOptions = {
     from: "utaustin@longhorngaming.gg",
-    to: "johnnguyen3196@gmail.com",
+    to: "test@gmail.com",
     subject: `Sauce`,
     html: '<h1>Hello</h1>'
 }
