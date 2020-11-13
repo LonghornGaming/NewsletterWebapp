@@ -8,9 +8,14 @@ function getEmails (){
         db.collection('emails').find('').toArray((error, result) => {
             if(error)
                 return error;
-            console.log(result);
+            let emails = [];
+            result.forEach(element => {
+               emails.push(element.email);
+            });
+            return emails;
         });
     });
 }
 
 getEmails();
+module.exports = {getEmails};
